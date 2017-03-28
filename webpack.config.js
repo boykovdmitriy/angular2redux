@@ -10,34 +10,34 @@ module.exports = {
 		"app": "./client/boot.ts"
 	},
 	output   : {
-		filename: "./public/[name].js"
+		filename: "[name].js",
+		path    : path.resolve(__dirname, './public')
 	},
 	resolve  : {
-		extensions: ["", ".js", ".ts", ".css"]
+		extensions: [".js", ".ts", ".css"]
 	},
 	module   : {
 		loaders: [
 			{
 				test  : /\.ts/,
-				loader: "ts"
+				loader: "ts-loader"
 			},
 			{
 				test   : /\.css$/,
 				exclude: /node_modules/,
-				loader : "to-string-loader!css"
+				loader : "to-string-loader!css-loader"
 			}
 		]
 	},
 	devServer: {
+		contentBase       : path.join(__dirname, "public"),
 		historyApiFallback: true,
 		compress          : false,
 		quiet             : false,
-		noInfo            : false,
 		headers           : {"X-Custom-Header": "yes"},
 		stats             : {colors: true},
 		port              : 5000,
 		inline            : true,
-		watch             : true,
-		open              : true
+		lazy              : true
 	}
 };
