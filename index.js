@@ -8,7 +8,7 @@ const config            = require('./webpack.config');
 const app               = express();
 const router            = express.Router();
 const compiler          = webpack(config);
-var counter             = 0;
+var counter             = 10;
 router.get('/api/counter', function (req, res) {
 	res.status(200).json({
 		data: counter

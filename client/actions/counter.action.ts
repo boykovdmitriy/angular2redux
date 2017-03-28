@@ -8,12 +8,25 @@ import { Action } from 'redux';
 export class CounterActions {
 	static INCREMENT = 'INCREMENT';
 	static DECREMENT = 'DECREMENT';
+	static FETCH = 'FETCH';
+	static FETCH_SUCCESS = 'FETCH_SUCCESS';
 
-	increment(): Action {
+	increment(): any {
 		return { type: CounterActions.INCREMENT };
 	}
 
-	decrement(): Action {
+	decrement(): any {
 		return { type: CounterActions.DECREMENT };
+	}
+
+	fetch(): any {
+		return { type: CounterActions.FETCH };
+	}
+
+	fetchSuccess(payload: number): any {
+		return {
+			type   : CounterActions.FETCH_SUCCESS,
+			payload: payload
+		};
 	}
 }

@@ -29,6 +29,10 @@ export class AppComponent {
 	            private actions: CounterActions) {
 	}
 
+	ngOnInit() {
+		this.ngRedux.dispatch(this.actions.fetch());
+	}
+
 	increment() {
 		this.ngRedux.dispatch(this.actions.increment());
 	}
