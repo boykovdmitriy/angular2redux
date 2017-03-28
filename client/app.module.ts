@@ -13,7 +13,7 @@ import {
 	rootReducer,
 	IAppState
 } from "./store";
-import { CounterActions } from "./actions/counter.action"; // <-- New
+import { CounterActions } from "./actions/counter.action";
 
 @NgModule({
 	          imports     : [BrowserModule, NgReduxModule],
